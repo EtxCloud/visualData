@@ -1,0 +1,664 @@
+/* 主页样式 */
+body {
+    max-height: 1080px;
+
+    // 显示背景
+    background: url(../image/bg.jpg) no-repeat;
+}
+
+
+// 整个容器
+.container {
+    // 居中显示
+    margin: 0 auto;
+    // 最小宽度
+    min-width: 1366px;
+    // 最大宽度
+    max-width: 1920px;
+    // 最小高度
+    min-height: 768px;
+    // 最大高度
+    max-height: 1080px;
+    // 顶部装饰栏背景
+    background: url(../image/logo.png) no-repeat;
+    background-size: contain;
+    //弹性布局
+    display: flex;
+    // 留白
+    padding: 100px 20px 20px;
+}
+
+//边框盒子样式
+.box_sty {
+    // 边框宽度
+    border: 20px solid transparent;
+    // 边框背景 //e('字符')可以编译会被计算的字符
+    border-image: url(../image/border.png) 50 37 20 127 e('/') 50px 37px 20px 127px;
+}
+
+
+// 左列
+.col_left {
+    // 弹性盒子占比
+    flex: 3;
+
+    // 概览
+    .over_view {
+        height: 108px;
+
+        // 部件
+        .item {
+            float: left;
+            width: 25%;
+            height: 100%;
+            text-align: center;
+
+            p {
+                font-size: 24px;
+                color: #fff;
+                margin-bottom: 15px;
+            }
+
+            span {
+                color: #4c9bfd;
+            }
+
+            &:nth-child(1) i {
+                color: #006cff;
+            }
+
+            &:nth-child(2) i,
+            &:nth-child(3) i {
+                color: #6acca3;
+            }
+
+            &:nth-child(4) i {
+                color: #ed3f35;
+            }
+        }
+    }
+
+    // 故障设备监控
+    .monitor {
+        height: 475px;
+        margin-top: 20px;
+
+        // tab切换标题栏
+        .tabs {
+            height: 24px;
+
+            a {
+                font-size: 18px;
+                color: #1950c4;
+
+                &:first-child {
+                    border-right: 2px solid #00f2f1;
+                    padding-right: 26px;
+                    margin-right: 26px;
+                }
+
+                &.active {
+                    color: #fff;
+                }
+            }
+        }
+
+        // 轮播内容
+        .content {
+
+            // 轮播区域头部
+            .head {
+                height: 38px;
+                line-height: 38px;
+                background-color: rgba(255, 255, 255, .1);
+                margin: 15px -20px 0;
+                padding: 0 20px;
+
+                span {
+                    color: #68d8fe;
+                    width: 25%;
+                    float: left;
+
+                    &:nth-child(2) {
+                        width: 50%;
+                    }
+                }
+            }
+
+            // 轮播区域
+            .carousel {
+                height: 350px;
+                margin: 0 -20px;
+                overflow: hidden;
+                position: relative;
+
+                ul {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    animation: carousel 5s linear infinite;
+
+                    @keyframes carousel {
+                        0% {
+                            top: 0;
+                        }
+
+                        100% {
+                            top: -525px
+                        }
+                    }
+
+                    &:hover {
+                        animation-play-state: paused;
+                    }
+                }
+
+                li {
+                    height: 35px;
+                    line-height: 35px;
+                    padding: 0 20px;
+                    color: #5696e5;
+
+                    span {
+                        float: left;
+                        width: 25%;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+
+                        &:nth-child(2) {
+                            width: 50%;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: rgb(0, 128, 0);
+                    }
+                }
+            }
+        }
+    }
+
+    // 点位分布统计
+    .point {
+        height: 335px;
+        margin-top: 20px;
+
+        h3 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .echarts {
+            height: 240px;
+            margin-top: 15px;
+
+            .pie {
+                width: 65%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, .1);
+            }
+
+            .data {
+                width: 35%;
+                height: 100%;
+                background: url(../image/rect.png) no-repeat;
+                background-size: cover;
+
+                .item {
+                    height: 50%;
+                    padding-top: 35px;
+                    text-align: center;
+
+                    p {
+                        color: #fff;
+                        font-size: 22px;
+                        font-weight: bold;
+                    }
+
+                    span {
+                        color: #4c9bfd;
+
+                    }
+
+                    &:nth-child(1) i {
+                        color: #ed3f35;
+                    }
+
+                    &:nth-child(2) i {
+                        color: #eacf19;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 中列
+.col_middle {
+    // 弹性盒子占比
+    flex: 4;
+    margin: 0 20px;
+
+    // 全国各地区域统计
+    .map {
+        height: 603px;
+
+        h3 {
+            height: 50px;
+            line-height: 50px;
+            font-size: 22px;
+            font-weight: normal;
+            color: #fff;
+
+            span {
+                color: #68d8fe;
+                margin-left: 5px;
+            }
+
+        }
+
+        .echarts {
+            height: 553px;
+            background-color: rgba(255, 255, 255, .1);
+        }
+    }
+
+
+    // 全国用户统计
+    .user {
+        height: 335px;
+        margin-top: 20px;
+
+        h3 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .echarts {
+            height: 240px;
+            margin-top: 15px;
+
+            .histogram {
+                width: 70%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, .1);
+            }
+
+            .data {
+                width: 30%;
+                height: 100%;
+                background: url(../image/rect.png) no-repeat;
+                background-size: cover;
+
+                .item {
+                    height: 50%;
+                    padding-top: 35px;
+                    text-align: center;
+
+                    p {
+                        color: #fff;
+                        font-size: 22px;
+                        font-weight: bold;
+                    }
+
+                    span {
+                        color: #4c9bfd;
+
+                    }
+
+                    &:nth-child(1) i {
+                        color: #ed3f35;
+                    }
+
+                    &:nth-child(2) i {
+                        color: #eacf19;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// 右列
+.col_right {
+    // 弹性盒子占比
+    flex: 3;
+
+    .order {
+        height: 144px;
+
+        .head {
+            height: 26px;
+
+            a {
+                display: inline-block;
+                width: 60px;
+                font-size: 14px;
+                text-align: center;
+                color: #006cff;
+                border-right: 2px solid #00f2f1;
+
+                &:last-child {
+                    border: none;
+                }
+
+                &.active {
+                    color: #fff;
+                }
+            }
+        }
+
+        .parts {
+            margin-top: 10px;
+
+            // 部件
+            .item {
+                float: left;
+                width: 50%;
+                height: 100%;
+
+                p {
+                    font-size: 24px;
+                    color: #fff;
+                    margin-bottom: 15px;
+                }
+
+                span {
+                    color: #4c9bfd;
+                }
+
+                &:nth-child(1) i {
+                    color: #ed3f35;
+                }
+
+                &:nth-child(2) i {
+                    color: #eacf19;
+                }
+            }
+        }
+    }
+
+    .sales {
+        height: 244px;
+        margin: 20px 0;
+
+        .head {
+            height: 26px;
+
+            h3 {
+                display: inline-block;
+                height: 26px;
+                font-size: 18px;
+                color: #fff;
+                font-weight: normal;
+                padding-right: 17px;
+                border-right: 2px solid #00f2f1;
+
+            }
+
+            a {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                font-size: 14px;
+                margin-left: 10px;
+                text-align: center;
+                color: #006cff;
+
+                &.active {
+                    color: #fff;
+                    background-color: rgb(76, 155, 253);
+                    border-radius: 2px;
+                }
+            }
+        }
+
+        .echarts {
+            height: 170px;
+            background-color: rgba(255, 255, 255, .1);
+        }
+    }
+
+    .channel,
+    .season {
+        height: 230px;
+        width: 48%;
+        padding: 0 10px;
+    }
+
+    .channel {
+        h3 {
+            font-weight: normal;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .item {
+            width: 50%;
+            height: 85px;
+            text-align: center;
+
+            p {
+                font-weight: bold;
+                font-size: 22px;
+                color: #fff;
+                margin: 15px 0 5px;
+
+                em {
+                    font-style: normal;
+                    font-size: 12px;
+                }
+            }
+
+            span {
+                color: #4c9bfd;
+            }
+        }
+    }
+
+
+    .season {
+        h3 {
+            font-weight: normal;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .echarts {
+            position: relative;
+            width: 100%;
+            height: 90px;
+            margin-top: 10px;
+            background-color: rgba(255, 255, 255, .1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+
+            .loop {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .show {
+                color: #fff;
+                text-align: center;
+
+                b {
+                    font-size: 16px;
+                }
+
+                i {
+                    font-style: normal;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .parts {
+            margin-top: 10px;
+            width: 100%;
+            height: 65px;
+
+            // 部件
+            .item {
+                float: left;
+                width: 50%;
+                height: 100%;
+
+                p {
+                    font-size: 14px;
+                    color: #fff;
+                    margin-bottom: 5px;
+                }
+
+                span {
+                    color: #4c9bfd;
+                }
+
+                &:nth-child(1) i {
+                    color: #6acca3;
+                }
+
+                &:nth-child(2) i {
+                    color: #ed3f35;
+                }
+            }
+        }
+    }
+
+    .hot {
+        margin-top: 20px;
+        height: 280px;
+
+        .hot_left {
+            width: 30%;
+
+            h3 {
+                font-size: 16px;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+            .data {
+                height: 200px;
+                padding-top: 15px;
+
+                p {
+                    height: 100%/3;
+
+                    i {
+                        width: 35px;
+                        height: 35px;
+                        margin-right: 15px;
+                        font-size: 35px;
+                        text-align: center;
+                        vertical-align: middle;
+
+                    }
+
+                    &:nth-child(1) i {
+                        color: #d93f36;
+                    }
+
+                    &:nth-child(2) i {
+                        color: #68d8fe;
+                    }
+
+                    &:nth-child(3) i {
+                        color: #4c9bfd;
+                    }
+
+                    span {
+                        color: #4c9bfd;
+                    }
+                }
+            }
+
+        }
+
+        .hot_right {
+            width: 70%;
+
+            h3 {
+                font-size: 16px;
+                color: #fff;
+                margin-bottom: 20px;
+
+                em {
+                    float: right;
+                    color: #087faf;
+                    font-size: 14px;
+                }
+
+            }
+
+            .data {
+                .icon-up {
+                    color: #ed3f35;
+                }
+
+                .icon-down {
+                    color: #36be90;
+                }
+
+                ul {
+                    float: left;
+                    width: 50%;
+
+                    &:first-child {
+                        color: #4995f4;
+                    }
+
+                    &:last-child {
+                        color: #3ab6c3;
+                        padding-left: 10px;
+                        background-color: rgba(255, 255, 255, .1);
+
+                    }
+
+                    li {
+                        width: 100%;
+                        height: 35px;
+                        line-height: 35px;
+
+                        &.active {
+                            color: #a3c6f2;
+                            background-color: rgba(255, 255, 255, .1);
+                        }
+
+                        span {
+                            display: inline-block;
+                            width: 50%;
+                        }
+
+                        em {
+                            display: inline-block;
+                            width: 35%;
+                            font-weight: bold;
+                            font-style: normal;
+                        }
+
+                        i {
+                            font-size: 12px;
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+
+}

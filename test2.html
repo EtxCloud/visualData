@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const materials = [
+            'Hydrogen',
+            'Helium',
+            'Lithium',
+            'Beryllium'
+        ];
+
+
+        // console.log(materials.map(material => material.length));
+        // expected output: Array [8, 6, 7, 9];
+
+
+        // console.log(materials.map(mtvl => Math.sqrt(mtvl.length)));
+
+
+        // .map()方法
+        /*  materials.map(function (currentValue, index, arr) {
+             console.log(currentValue);
+             console.log(index);
+             console.log(arr);
+             console.log(this);
+         },this.value) */
+
+
+        // 箭头函数
+        //  ()=>{console.log('1')};
+
+
+        //加括号的函数体返回对象字面量表达式：
+        // params => ({
+        //     foo: bar
+        // })
+
+
+        //支持剩余参数和默认参数
+        /* 
+        (param1, param2, ...rest) => { statements }
+        (param1 = defaultValue1, param2, …, paramN = defaultValueN) => { 
+        statements } 
+        */
+
+
+        //同样支持参数列表解构
+        /* 
+        let f = ([a, b] = [1, 2], {
+            x: c
+        } = {
+            x: a + b
+        }) => a + b + c;
+        f(); // 6 
+        */
+
+
+        // let adc = ([a,b]=[1,2],{x:c}={x:a+b})=>a+b+c;
+        // console.log(adc());
+
+
+        //参数拆解写法
+        /*  
+        let acc = materials.map(({
+             "length": lengthFooBArX
+         }) => lengthFooBArX); // [8, 6, 7, 9]
+         console.log(acc); 
+         */
+    </script>
+    <script src="./js/jquery-1.12.4.js"></script>
+
+
+
+
+    <!--  <p>请输出一个 5 到 10 之间的数字:</p>
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">测试输入</button>
+    <p id="mess"></p>
+
+
+    <script type="text/javascript">
+        function myFunction() {
+            try {
+                var x = document.getElementById("demo").value;
+                // 取元素的值
+
+                if (x == "") throw "值为空";
+                // 根据获取的值， 抛出错误
+                if (isNaN(x)) throw "不是数字";
+                if (x > 10) throw "太大";
+                if (x < 5) throw "太小";
+            } catch (err) {
+                var y = document.getElementById("mess");
+                // 抓住上面throw抛出的错误， 给p标签显示
+                y.innerHTML = "错误：" + err + "。";
+            }
+        }
+    </script> -->
+
+
+    <!-- <script>
+        function Person() {
+            let that = this;
+            that.age = 0;
+            /* setInterval(
+                function () {
+                    that.age++
+                }, 1000
+            ) */
+        };
+        let p = new Person();
+        // console.log(p.age);
+    </script> -->
+
+    <!-- <script>
+        let adder = {
+            base: 1,
+            add: function (a) {
+                let f = function (v) {
+                    v + this.base;
+                };
+                return f(a);
+            },
+            addThruCall: function (a) {
+                let f = function (v) {
+                    v + this.base;
+                };
+                let b = {
+                    base: 2
+                };
+                return f.call(b, a);
+            }
+        };
+
+
+        console.log(adder.add(1)); //undefind
+        console.log(adder.addThruCall(1)); //undefind
+    </script> -->
+
+    <!-- <script>
+        let adder = {
+            base: 1,
+
+            add: function (a) {
+                let f = v => v + this.base;
+                return f(a);
+            },
+
+            addThruCall: function (a) {
+                let f = v => v + this.base;
+                let b = {
+                    base: 2
+                };
+
+                return f.call(b, a);
+            }
+        };
+
+        console.log(adder.add(1)); // 输出 2
+        console.log(adder.addThruCall(1)); // 仍然输出 2
+    </script> -->
+</body>
+
+</html>
